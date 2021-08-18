@@ -4,7 +4,7 @@
   "mongoURL": "Mongo urlniz",
   "prefix": "Bot prefix",
   "sesKanalı": "Botun gireceği ses kanalı",
-  "status": ["Serendia ❤️ Astpod", "Astpod ❤️ Sex"],
+  "status": ["Serendia ❤️ Astpod", "Astpod ❤️ Serendia"],
   "owner": ["Bot kurucu ID'si"],
   "ok": "Evet emoji id",
   "no": "Hayır emoji id",
