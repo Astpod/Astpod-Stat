@@ -1,5 +1,4 @@
 const { Discord, Client, MessageEmbed, TextChannel, Collection } = require("discord.js")
-const Webhooklar = {}
 const parsems = require("parse-ms");
 
 module.exports = (client, cfg, moment) => {
@@ -86,24 +85,6 @@ client.getDate = (date, type) => {
   
 Array.prototype.random = function () {
   return this[Math.floor((Math.random() * this.length))];
-};
-  
-TextChannel.prototype.wsend = async function (content, options) {
-  if (Webhooklar[this.id]) return (await Webhooklar[this.id].send(content, options));
-  let entegrasyonlar = await this.fetchWebhooks();
-  let webh = entegrasyonlar.find(e => e.name == client.user.username),
-    result;
-  if (!webh) {
-    webh = await this.createWebhook(client.user.username, {
-      avatar: client.user.avatarURL()
-    });
-    Webhooklar[this.id] = webh;
-    result = await webh.send(content, options);
-  } else {
-    Webhooklar[this.id] = webh;
-    result = await webh.send(content, options);
-  }
-  return result;
 };
 
 client.chunkArray = (arr, chunkSize) => {
